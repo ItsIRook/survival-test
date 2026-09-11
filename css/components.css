@@ -1,0 +1,901 @@
+/* ==========================================================================
+   SURVIVAL.EXE — COMPONENT STYLES (PHYSICAL DOSSIER AESTHETIC)
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Dossier Manila Folder & Evidence Tab
+   -------------------------------------------------------------------------- */
+.folder-tab {
+  position: absolute;
+  top: -26px;
+  left: 20px;
+  background: var(--folder-manila);
+  border: 1px solid #b89855;
+  border-bottom: none;
+  padding: 0.2rem 1.25rem 0.1rem;
+  font-family: var(--font-stamp);
+  font-size: 1.15rem;
+  letter-spacing: 0.05em;
+  color: #332612;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.08);
+}
+
+.paperclip {
+  position: absolute;
+  top: -14px;
+  right: 28px;
+  width: 20px;
+  height: 48px;
+  border: 3px solid #7a7a7a;
+  border-radius: 12px;
+  background: transparent;
+  z-index: 10;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.coffee-ring {
+  position: absolute;
+  bottom: 15px;
+  right: 25px;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  border: 6px solid rgba(139, 94, 60, 0.22);
+  filter: blur(0.5px);
+  pointer-events: none;
+  opacity: 0.65;
+  transform: rotate(25deg);
+}
+
+/* --------------------------------------------------------------------------
+   FEATURE 2: Hero & "Why We Deserve to Stay" Thesis
+   -------------------------------------------------------------------------- */
+.hero-section {
+  padding: 4.5rem 0 3rem;
+  text-align: center;
+  position: relative;
+}
+
+.classified-header-stamp {
+  margin-bottom: 1.25rem;
+}
+
+.hero-main-title {
+  font-size: clamp(3rem, 7vw, 5.5rem);
+  line-height: 0.95;
+  margin-bottom: 1rem;
+  color: var(--ink-black);
+  text-transform: uppercase;
+  text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.1);
+}
+
+.hero-main-title .stamp-word {
+  color: var(--stamp-red);
+  position: relative;
+  display: inline-block;
+  transform: rotate(-1deg);
+}
+
+.hero-subtitle {
+  font-size: 1.15rem;
+  color: var(--stamp-red);
+  font-weight: 700;
+  margin-bottom: 1.75rem;
+  letter-spacing: 0.05em;
+}
+
+.thesis-box {
+  max-width: 860px;
+  margin: 1.75rem auto 2.5rem;
+  background: #fffdf9;
+  border: 2px solid #222;
+  border-radius: 2px;
+  padding: 2rem 2.5rem;
+  text-align: left;
+  box-shadow: 6px 6px 0px #1a1a1a;
+  position: relative;
+}
+
+.thesis-label {
+  font-family: var(--font-stamp);
+  font-size: 1.35rem;
+  color: var(--stamp-red);
+  letter-spacing: 0.08em;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.thesis-headline {
+  font-size: 1.8rem;
+  font-family: var(--font-stamp);
+  color: #111;
+  line-height: 1.15;
+  margin-bottom: 0.75rem;
+}
+
+.thesis-sentence {
+  font-family: var(--font-typewriter);
+  font-size: 1.15rem;
+  color: #262422;
+  line-height: 1.6;
+}
+
+.handwritten-annotation {
+  position: absolute;
+  top: -24px;
+  right: -15px;
+  font-family: var(--font-handwritten);
+  color: var(--stamp-red);
+  font-size: 1.25rem;
+  transform: rotate(6deg);
+  pointer-events: none;
+  text-shadow: 1px 1px 0px #fff;
+}
+
+/* --------------------------------------------------------------------------
+   FEATURE 9: "DO NOT ELIMINATE" Panic Clemency Switch
+   -------------------------------------------------------------------------- */
+.panic-button-wrapper {
+  text-align: center;
+  padding: 2rem 0;
+}
+
+.panic-btn {
+  position: relative;
+  background: repeating-linear-gradient(
+    45deg,
+    #ba1e1e,
+    #ba1e1e 20px,
+    #9e1616 20px,
+    #9e1616 40px
+  );
+  color: #ffffff;
+  border: 4px solid #111;
+  border-radius: 8px;
+  padding: 1.6rem 3.5rem;
+  font-family: var(--font-stamp);
+  font-size: clamp(1.8rem, 4vw, 2.7rem);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  cursor: pointer;
+  box-shadow: 6px 8px 0px #111, 0 10px 25px rgba(186, 30, 30, 0.45);
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+  animation: pulse-panic 2s infinite ease-in-out;
+}
+
+.panic-btn:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 8px 10px 0px #111, 0 14px 30px rgba(186, 30, 30, 0.6);
+}
+
+.panic-btn:active {
+  transform: translate(3px, 3px);
+  box-shadow: 3px 3px 0px #111;
+}
+
+.panic-caution-tape {
+  display: inline-block;
+  background: #ffdb4d;
+  color: #111;
+  font-family: var(--font-stamp);
+  font-size: 1rem;
+  padding: 0.2rem 1.5rem;
+  border: 2px solid #111;
+  margin-top: 1rem;
+  transform: rotate(-1deg);
+  box-shadow: 2px 2px 0px #111;
+  letter-spacing: 0.08em;
+}
+
+.panic-subtext {
+  margin-top: 0.9rem;
+  font-size: 1rem;
+  color: var(--ink-faded);
+  font-style: italic;
+}
+
+/* Emergency Screen Lockdown Modal */
+.lockdown-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(40, 10, 10, 0.82);
+  backdrop-filter: blur(6px);
+  z-index: 99999;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 1.5rem;
+}
+
+.lockdown-overlay.active {
+  display: flex;
+}
+
+.lockdown-content {
+  background: #fff8eb;
+  background-image: url('../assets/crumpled-paper.jpg');
+  border: 5px solid #ba1e1e;
+  padding: 3rem 2.5rem;
+  max-width: 680px;
+  width: 100%;
+  box-shadow: 10px 10px 0px #000, 0 0 80px rgba(186, 30, 30, 0.8);
+  position: relative;
+  animation: popIn 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.lockdown-title {
+  font-family: var(--font-stamp);
+  color: #ba1e1e;
+  font-size: clamp(2.4rem, 5vw, 3.6rem);
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.lockdown-body {
+  font-family: var(--font-typewriter);
+  font-size: 1.2rem;
+  color: #222;
+  margin: 1.25rem 0 2rem;
+  line-height: 1.6;
+}
+
+/* --------------------------------------------------------------------------
+   FEATURE 1: The Groveling Slider (Analog Polygraph / Panic Gauge)
+   -------------------------------------------------------------------------- */
+.grovel-card {
+  max-width: 760px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.grovel-avatar-stage {
+  min-height: 170px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 1.5rem 0;
+  position: relative;
+}
+
+.avatar-face-svg {
+  width: 130px;
+  height: 130px;
+  transition: transform 0.2s ease;
+  filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.18));
+}
+
+.grovel-meter-label {
+  font-family: var(--font-stamp);
+  font-size: 1.8rem;
+  margin-top: 1rem;
+  color: var(--stamp-red);
+  letter-spacing: 0.05em;
+  min-height: 2.2rem;
+}
+
+.grovel-subtext {
+  font-family: var(--font-typewriter);
+  font-size: 1.05rem;
+  color: var(--ink-faded);
+  min-height: 1.75rem;
+  font-style: italic;
+}
+
+.custom-range-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 16px;
+  border-radius: 4px;
+  background: linear-gradient(90deg, #58b971 0%, #f7b731 50%, #ba1e1e 100%);
+  border: 2px solid #222;
+  outline: none;
+  margin: 1.75rem 0 1rem;
+  cursor: pointer;
+  box-shadow: inset 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.custom-range-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #ba1e1e;
+  border: 3px solid #fff;
+  box-shadow: 2px 3px 6px rgba(0,0,0,0.4);
+  cursor: grab;
+}
+
+.slider-scale-labels {
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--font-stamp);
+  font-size: 1.15rem;
+  color: var(--ink-faded);
+  letter-spacing: 0.05em;
+}
+
+/* --------------------------------------------------------------------------
+   FEATURE 3: Confession Wall (Physical Corkboard & Sticky Notes)
+   -------------------------------------------------------------------------- */
+.corkboard-container {
+  background: #c29562;
+  background-image: 
+    radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.1), transparent 60%),
+    repeating-linear-gradient(45deg, rgba(0, 0, 0, 0.03) 0px, rgba(0, 0, 0, 0.03) 2px, transparent 2px, transparent 4px);
+  border: 12px solid #6b4c2b;
+  box-shadow: inset 0 0 40px rgba(0, 0, 0, 0.5), 0 8px 25px rgba(0, 0, 0, 0.35);
+  border-radius: 8px;
+  padding: 2.5rem 2rem;
+  position: relative;
+}
+
+.confession-wall-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 2rem;
+}
+
+.sticky-note {
+  padding: 1.6rem 1.4rem;
+  border-radius: 2px;
+  position: relative;
+  box-shadow: 4px 6px 16px rgba(0, 0, 0, 0.35);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 220px;
+}
+
+.sticky-note:hover {
+  transform: scale(1.05) rotate(0deg) !important;
+  z-index: 10;
+  box-shadow: 8px 12px 28px rgba(0, 0, 0, 0.45);
+}
+
+/* Push-pin on top of sticky note */
+.sticky-note::after {
+  content: '';
+  position: absolute;
+  top: 6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 14px;
+  height: 14px;
+  background: #ba1e1e;
+  border-radius: 50%;
+  box-shadow: inset -2px -2px 3px rgba(0,0,0,0.4), 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.sticky-yellow { background: linear-gradient(135deg, #fff775, #ffeb3b); color: #222; }
+.sticky-pink { background: linear-gradient(135deg, #ffb3c6, #ff8fa3); color: #222; }
+.sticky-blue { background: linear-gradient(135deg, #bde0fe, #a2d2ff); color: #112; }
+.sticky-green { background: linear-gradient(135deg, #c7f9cc, #80ed99); color: #122; }
+
+.confession-author {
+  font-family: var(--font-stamp);
+  font-size: 1.2rem;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
+  border-bottom: 1px dashed rgba(0, 0, 0, 0.25);
+  padding-bottom: 0.25rem;
+}
+
+.confession-text {
+  font-family: var(--font-typewriter);
+  font-size: 1rem;
+  line-height: 1.45;
+  font-weight: 600;
+}
+
+.sticky-footer {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: var(--font-stamp);
+  font-size: 0.95rem;
+  opacity: 0.85;
+}
+
+.judge-pick-btn {
+  background: #222;
+  color: #fff;
+  border: none;
+  border-radius: 2px;
+  padding: 0.3rem 0.6rem;
+  font-family: var(--font-stamp);
+  font-size: 0.95rem;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+}
+
+.judge-pick-btn:hover {
+  background: var(--stamp-red);
+}
+
+/* Judge Read Aloud Spotlight Modal */
+.judge-spotlight-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(4px);
+  z-index: 1000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+}
+
+.judge-spotlight-modal.active {
+  display: flex;
+}
+
+.spotlight-card {
+  background: #fffbe6;
+  background-image: url('../assets/crumpled-paper.jpg');
+  border: 4px solid #111;
+  color: #111;
+  max-width: 540px;
+  width: 100%;
+  padding: 2.75rem 2.25rem;
+  box-shadow: 10px 10px 0px #111;
+  position: relative;
+  text-align: center;
+}
+
+.spotlight-badge {
+  background: var(--stamp-red);
+  color: #fff;
+  font-family: var(--font-stamp);
+  font-size: 1.3rem;
+  padding: 0.3rem 1.2rem;
+  display: inline-block;
+  margin-bottom: 1.25rem;
+  transform: rotate(-2deg);
+  letter-spacing: 0.08em;
+}
+
+/* --------------------------------------------------------------------------
+   FEATURE 4: Auto-Apology Generator (Western Union Telegram)
+   -------------------------------------------------------------------------- */
+.telegram-card {
+  background: #faf4e6;
+  border: 2px solid #222;
+  box-shadow: 5px 5px 0px #222;
+  padding: 2.5rem 2rem;
+  position: relative;
+}
+
+.telegram-header-bar {
+  border-bottom: 3px double #222;
+  padding-bottom: 0.75rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: var(--font-stamp);
+  font-size: 1.3rem;
+  color: #222;
+}
+
+.apology-box {
+  background: #fff;
+  border: 2px dashed #998877;
+  padding: 2rem;
+  text-align: center;
+  margin-bottom: 1.75rem;
+  min-height: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: inset 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.apology-quote {
+  font-size: 1.35rem;
+  font-family: var(--font-typewriter);
+  color: #111;
+  line-height: 1.6;
+}
+
+.apology-subtext {
+  margin-top: 1rem;
+  font-size: 1.05rem;
+  color: var(--stamp-red);
+  font-family: var(--font-stamp);
+  letter-spacing: 0.08em;
+}
+
+.apology-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn-primary {
+  background: #ba1e1e;
+  color: #fff;
+  font-family: var(--font-stamp);
+  font-size: 1.3rem;
+  letter-spacing: 0.06em;
+  padding: 0.75rem 1.75rem;
+  border: 2px solid #111;
+  cursor: pointer;
+  box-shadow: 3px 3px 0px #111;
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+.btn-primary:hover {
+  transform: translate(-1px, -1px);
+  box-shadow: 4px 4px 0px #111;
+}
+.btn-primary:active {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0px #111;
+}
+
+.btn-secondary {
+  background: #fff;
+  color: #111;
+  border: 2px solid #111;
+  padding: 0.75rem 1.5rem;
+  font-family: var(--font-stamp);
+  font-size: 1.25rem;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  box-shadow: 3px 3px 0px #111;
+  transition: transform 0.1s ease;
+}
+
+.btn-secondary:hover {
+  background: #eee;
+}
+
+/* --------------------------------------------------------------------------
+   FEATURE 5: Roast Our Rivals (Police Mugshot Dossier)
+   -------------------------------------------------------------------------- */
+.roast-card {
+  border: 2px solid #111;
+  box-shadow: 5px 5px 0px #111;
+}
+
+.rival-selector-row {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+  align-items: center;
+  font-family: var(--font-stamp);
+  font-size: 1.15rem;
+}
+
+.rival-select {
+  background: #fff;
+  color: #111;
+  border: 2px solid #111;
+  padding: 0.35rem 0.75rem;
+  font-family: var(--font-typewriter);
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+.roast-dossier-body {
+  background: #fffefb;
+  border: 2px dashed #b89855;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.roast-target-name {
+  color: var(--stamp-red);
+  font-size: 1.8rem;
+  font-family: var(--font-stamp);
+  margin-bottom: 0.5rem;
+}
+
+.roast-burn-text {
+  font-size: 1.12rem;
+  font-family: var(--font-typewriter);
+  color: #222;
+  margin-bottom: 1.25rem;
+  line-height: 1.5;
+}
+
+.burn-meter-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: var(--font-stamp);
+  font-size: 1.15rem;
+  color: var(--ink-faded);
+}
+
+.burn-meter-track {
+  flex: 1;
+  height: 14px;
+  background: #ddd;
+  border: 2px solid #222;
+  overflow: hidden;
+}
+
+.burn-meter-fill {
+  height: 100%;
+  width: 96%;
+  background: var(--stamp-red);
+}
+
+/* --------------------------------------------------------------------------
+   FEATURE 7: Rival Team Trial (Courtroom Indictment Docket)
+   -------------------------------------------------------------------------- */
+.courtroom-docket {
+  border: 3px solid #ba1e1e;
+  background: #fffdf5;
+  box-shadow: 6px 6px 0px #ba1e1e;
+  position: relative;
+  overflow: hidden;
+}
+
+.indictment-box {
+  margin: 1.25rem 0;
+  border-left: 4px solid var(--stamp-red);
+  padding-left: 1.25rem;
+}
+
+.indictment-row {
+  margin-bottom: 0.85rem;
+  font-family: var(--font-typewriter);
+}
+
+.indictment-row span.label {
+  font-family: var(--font-stamp);
+  color: var(--stamp-red);
+  font-size: 1.2rem;
+  display: block;
+  letter-spacing: 0.05em;
+}
+
+.gavel-btn-wrapper {
+  text-align: center;
+  margin-top: 1.75rem;
+}
+
+.gavel-strike-btn {
+  background: #54371f;
+  color: #fff;
+  border: 2px solid #111;
+  padding: 0.9rem 2.25rem;
+  font-family: var(--font-stamp);
+  font-size: 1.45rem;
+  letter-spacing: 0.08em;
+  cursor: pointer;
+  box-shadow: 4px 4px 0px #111;
+  transition: transform 0.1s ease;
+}
+
+.gavel-strike-btn:hover {
+  transform: translate(-1px, -1px);
+  box-shadow: 5px 5px 0px #111;
+}
+
+.guilty-stamp-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-15deg) scale(2);
+  border: 6px double #ba1e1e;
+  color: #ba1e1e;
+  font-family: var(--font-stamp);
+  font-size: 5rem;
+  font-weight: 900;
+  padding: 0.2rem 2.5rem;
+  letter-spacing: 0.1em;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.15s ease, transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  mask-image: radial-gradient(circle, rgba(0,0,0,1) 85%, rgba(0,0,0,0.5) 100%);
+  z-index: 20;
+}
+
+.guilty-stamp-overlay.stamped {
+  opacity: 1;
+  transform: translate(-50%, -50%) rotate(-15deg) scale(1);
+}
+
+/* --------------------------------------------------------------------------
+   FEATURE 6: "Judges, Please" Chatbot (Court Reporter Transcript Tape)
+   -------------------------------------------------------------------------- */
+.transcript-window {
+  display: flex;
+  flex-direction: column;
+  height: 480px;
+  background: #fffefb;
+  border: 2px solid #222;
+  box-shadow: 5px 5px 0px #222;
+}
+
+.chat-history {
+  flex: 1;
+  overflow-y: auto;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  background-image: repeating-linear-gradient(
+    transparent,
+    transparent 27px,
+    rgba(0, 0, 0, 0.05) 28px
+  );
+}
+
+.chat-bubble {
+  max-width: 82%;
+  padding: 0.85rem 1.15rem;
+  border-radius: 3px;
+  font-family: var(--font-typewriter);
+  font-size: 1.02rem;
+  line-height: 1.45;
+  box-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+}
+
+.chat-bubble.judge {
+  align-self: flex-end;
+  background: #1c3d6e;
+  color: #ffffff;
+  border: 1px solid #11284a;
+}
+
+.chat-bubble.bot {
+  align-self: flex-start;
+  background: #fdf6e2;
+  border: 1px solid #d4c8b0;
+  color: #111;
+}
+
+.bot-desperation-tag {
+  font-family: var(--font-stamp);
+  font-size: 1rem;
+  color: var(--stamp-red);
+  display: block;
+  margin-bottom: 0.25rem;
+  letter-spacing: 0.05em;
+}
+
+.chat-suggestion-chips {
+  padding: 0.6rem 1rem;
+  display: flex;
+  gap: 0.5rem;
+  overflow-x: auto;
+  border-top: 1px dashed #b8a88c;
+  background: #fbf7ee;
+}
+
+.chip-btn {
+  background: #fff;
+  border: 1px solid #222;
+  color: #111;
+  font-family: var(--font-typewriter);
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 0.3rem 0.7rem;
+  border-radius: 2px;
+  white-space: nowrap;
+  cursor: pointer;
+  box-shadow: 1px 1px 0px #222;
+}
+
+.chip-btn:hover {
+  background: var(--highlight-yellow);
+}
+
+.chat-input-bar {
+  display: flex;
+  border-top: 2px solid #222;
+  background: #faf4e6;
+}
+
+.chat-input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  padding: 0.95rem 1.25rem;
+  color: #111;
+  font-family: var(--font-typewriter);
+  font-size: 1rem;
+  outline: none;
+}
+
+.chat-send-btn {
+  background: #ba1e1e;
+  color: #fff;
+  border: none;
+  border-left: 2px solid #222;
+  padding: 0 1.75rem;
+  font-family: var(--font-stamp);
+  font-size: 1.3rem;
+  letter-spacing: 0.06em;
+  cursor: pointer;
+}
+
+.chat-send-btn:hover {
+  background: #9e1616;
+}
+
+/* --------------------------------------------------------------------------
+   FEATURE 8: Emergency Bribe Vault (Contraband Locker)
+   -------------------------------------------------------------------------- */
+.vault-container {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+  border: 2px solid #111;
+  box-shadow: 5px 5px 0px #111;
+}
+
+.vault-safe-door {
+  width: 210px;
+  height: 210px;
+  margin: 1.5rem auto;
+  background: radial-gradient(circle, #555 0%, #2b2b2b 100%);
+  border: 10px solid #1a1a1a;
+  border-radius: 50%;
+  box-shadow: inset 0 0 20px #000, 4px 6px 15px rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  cursor: pointer;
+}
+
+.vault-dial {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: #c8b282;
+  border: 4px solid #111;
+  box-shadow: inset 0 0 10px rgba(0,0,0,0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #111;
+  font-family: var(--font-stamp);
+  font-size: 1.6rem;
+  letter-spacing: 0.05em;
+}
+
+.vault-bribe-reveal {
+  margin-top: 1.5rem;
+  background: #fff;
+  border: 3px dashed var(--stamp-green);
+  padding: 1.75rem;
+  display: none;
+  animation: fadeIn 0.4s ease;
+  box-shadow: 4px 4px 0px var(--stamp-green);
+}
+
+.vault-bribe-reveal.unlocked {
+  display: block;
+}
+
+.bribe-title {
+  color: var(--stamp-green);
+  font-family: var(--font-stamp);
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.bribe-description {
+  font-family: var(--font-typewriter);
+  color: #222;
+  font-size: 1.05rem;
+  line-height: 1.6;
+}

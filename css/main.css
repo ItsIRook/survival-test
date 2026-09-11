@@ -1,0 +1,265 @@
+/* ==========================================================================
+   SURVIVAL.EXE — PHYSICAL DOSSIER & EVIDENCE CASE-FILE SYSTEM
+   Aesthetic: Declassified Court Dossier / Manila Folders / Typewriter & Stamps
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Special+Elite&family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=Permanent+Marker&family=Bebas+Neue&family=Inter:wght@400;600;700&display=swap');
+
+:root {
+  /* Paper & Dossier Colors */
+  --paper-bg: #f5efe3;
+  --paper-card: #faf6ee;
+  --paper-darker: #eae0cf;
+  --folder-manila: #e6c88b;
+  --folder-tab: #dcb873;
+  
+  /* Ink & Stamp Colors */
+  --ink-black: #1f1e1c;
+  --ink-faded: #423f3b;
+  --ink-blue: #1c3d6e;
+  --stamp-red: #ba1e1e;
+  --stamp-red-faint: rgba(186, 30, 30, 0.15);
+  --stamp-green: #1d733a;
+  
+  /* Evidence Accents */
+  --tape-color: rgba(243, 235, 206, 0.82);
+  --tape-border: rgba(200, 185, 145, 0.5);
+  --highlight-yellow: #fff775;
+  --highlight-pink: #ffb8d1;
+  --highlight-green: #b4f5be;
+  
+  /* Typography */
+  --font-typewriter: 'Special Elite', 'Courier Prime', Courier, monospace;
+  --font-clean-mono: 'Courier Prime', monospace;
+  --font-handwritten: 'Permanent Marker', cursive, sans-serif;
+  --font-stamp: 'Bebas Neue', Impact, sans-serif;
+  --font-body: 'Courier Prime', Georgia, serif;
+
+  /* Shadows */
+  --paper-shadow: 2px 4px 14px rgba(0, 0, 0, 0.16), 0 1px 3px rgba(0, 0, 0, 0.08);
+  --paper-shadow-hover: 4px 8px 24px rgba(0, 0, 0, 0.22);
+}
+
+/* Reset & Box Sizing */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--paper-bg);
+  background-image: 
+    linear-gradient(rgba(245, 239, 227, 0.65), rgba(245, 239, 227, 0.65)),
+    url('../assets/crumpled-paper.jpg');
+  background-size: auto, cover;
+  background-attachment: fixed;
+  color: var(--ink-black);
+  font-family: var(--font-body);
+  line-height: 1.6;
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Subtle gritty paper vignette */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  box-shadow: inset 0 0 120px rgba(70, 48, 20, 0.25);
+  z-index: 9999;
+}
+
+.container {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* Typography */
+h1, h2, h3, h4 {
+  font-family: var(--font-stamp);
+  letter-spacing: 0.03em;
+  color: var(--ink-black);
+}
+
+.typewriter {
+  font-family: var(--font-typewriter);
+}
+
+.handwritten {
+  font-family: var(--font-handwritten);
+  color: var(--stamp-red);
+}
+
+/* Highlighting marker effect */
+.highlight-mark {
+  background: var(--highlight-yellow);
+  padding: 0.15rem 0.4rem;
+  border-radius: 2px;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+/* Classified Redaction bar */
+.redacted {
+  background: #111;
+  color: #111;
+  padding: 0 0.35rem;
+  user-select: none;
+  transition: background 0.2s ease, color 0.2s ease;
+  cursor: help;
+}
+.redacted:hover {
+  background: transparent;
+  color: var(--stamp-red);
+  font-weight: 700;
+  text-decoration: line-through;
+}
+
+/* Floating Sound SFX Toggle */
+.sound-toggle-float {
+  position: fixed;
+  top: 18px;
+  right: 20px;
+  z-index: 1000;
+  background: #fff;
+  border: 2px solid var(--ink-black);
+  color: var(--ink-black);
+  padding: 0.4rem 0.9rem;
+  font-family: var(--font-typewriter);
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 3px 3px 0px var(--ink-black);
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+.sound-toggle-float:hover {
+  transform: translate(-1px, -1px);
+  box-shadow: 4px 4px 0px var(--ink-black);
+  background: var(--highlight-yellow);
+}
+
+.sound-toggle-float:active {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0px var(--ink-black);
+}
+
+/* Section Dividers */
+.defense-section {
+  padding: 3.5rem 0;
+  position: relative;
+}
+
+.section-header {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.section-tag {
+  font-family: var(--font-stamp);
+  font-size: 1.25rem;
+  color: var(--stamp-red);
+  letter-spacing: 0.12em;
+  display: inline-block;
+  margin-bottom: 0.35rem;
+  border-bottom: 2px solid var(--stamp-red);
+}
+
+.section-title {
+  font-size: clamp(2.2rem, 4vw, 3.2rem);
+  letter-spacing: 0.02em;
+  color: var(--ink-black);
+}
+
+.section-desc {
+  font-family: var(--font-typewriter);
+  color: var(--ink-faded);
+  font-size: 1.02rem;
+  max-width: 680px;
+  margin: 0.5rem auto 0;
+}
+
+/* Grid Layouts */
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 2rem;
+}
+
+/* Rubber Stamp Styling */
+.rubber-stamp {
+  display: inline-block;
+  font-family: var(--font-stamp);
+  font-size: 1.8rem;
+  color: var(--stamp-red);
+  border: 3px solid var(--stamp-red);
+  padding: 0.2rem 0.8rem;
+  border-radius: 4px;
+  text-transform: uppercase;
+  transform: rotate(-6deg);
+  opacity: 0.85;
+  mask-image: radial-gradient(circle, rgba(0,0,0,1) 80%, rgba(0,0,0,0.6) 100%);
+  user-select: none;
+}
+
+.rubber-stamp.green {
+  color: var(--stamp-green);
+  border-color: var(--stamp-green);
+  transform: rotate(4deg);
+}
+
+/* Masking Tape Strips */
+.tape-strip {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%) rotate(-1deg);
+  width: 120px;
+  height: 26px;
+  background: var(--tape-color);
+  border-left: 1px dashed rgba(0,0,0,0.15);
+  border-right: 1px dashed rgba(0,0,0,0.15);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  z-index: 5;
+  opacity: 0.9;
+}
+
+/* Paper Card Container */
+.paper-card {
+  background-color: var(--paper-card);
+  background-image: url('../assets/crumpled-paper.jpg');
+  background-blend-mode: multiply;
+  background-size: cover;
+  border: 1px solid #d4c8b0;
+  box-shadow: var(--paper-shadow);
+  padding: 2.25rem 2rem;
+  position: relative;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.paper-card:hover {
+  box-shadow: var(--paper-shadow-hover);
+}
+
+/* Footer */
+footer {
+  background: var(--paper-darker);
+  border-top: 2px dashed #b8a88c;
+  padding: 2.5rem 0;
+  text-align: center;
+  font-family: var(--font-typewriter);
+  font-size: 0.95rem;
+  color: var(--ink-faded);
+  margin-top: 3rem;
+}

@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SURVIVAL.EXE — The Round 2 Emergency Defense</title>
+  <meta name="description"
+    content="The official emergency defense petition filed by our team to keep our seats in Round 2.">
+
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/animations.css">
+</head>
+
+<body>
+
+  <!-- Floating Audio SFX Toggle (Clean & Minimal, No Banner) -->
+  <button id="audioToggleBtn" class="sound-toggle-float" title="Toggle Sound FX">🔊 SFX: ON</button>
+
+  <!-- =========================================================================
+       HERO: "Why We Deserve to Stay" Thesis
+       ========================================================================= -->
+  <section class="hero-section" id="sectionThesis">
+    <div class="container">
+
+      <h1 class="hero-main-title">
+        PROJECT <span class="stamp-word">SURVIVAL.EXE</span>
+      </h1>
+
+      <p class="typewriter hero-subtitle">
+        THE OFFICIAL EMERGENCY PETITION TO KEEP OUR TEAM IN ROUND 2
+      </p>
+
+      <!-- One Headline, One Sentence Thesis (No AI Labels) -->
+      <div class="thesis-box" id="whyWeDeserveToStay">
+        <div class="tape-strip"></div>
+        <div class="paperclip"></div>
+        <div class="coffee-ring"></div>
+        <span class="handwritten-annotation">← READ THIS ALOUD TO THE JUDGES!</span>
+
+        <h2 class="thesis-headline">
+          PLEASE FUCKING SPARE US
+        </h2>
+        <p class="thesis-sentence">
+          Other teams produce clean code; we produce miracles out of sheer panic, caffeine overdose, and StackOverflow
+          answers from 2011
+        </p>
+      </div>
+
+      <!-- =======================================================================
+           "DO NOT ELIMINATE" Button
+           ======================================================================= -->
+      <div class="panic-button-wrapper" id="sectionPanicButton">
+        <button id="doNotEliminateBtn" class="panic-btn" title="Click to grant our team immunity">
+          ⚠️ DO NOT ELIMINATE ⚠️
+        </button>
+        <br>
+        <p class="typewriter panic-subtext">
+          (clicking this is legally binding and locks in our spot in the top 50)
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       1. The Groveling Slider
+       ========================================================================= -->
+  <section class="defense-section" id="sectionGrovelSlider">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">THE GROVELING GAUGE</h2>
+        <p class="section-desc">Drag this slider to match our exact emotional breakdown as you judge our project.</p>
+      </div>
+
+      <div class="paper-card grovel-card">
+        <div class="folder-tab">PANIC TELEMETRY</div>
+        <div class="tape-strip"></div>
+
+        <div class="grovel-avatar-stage">
+          <div id="grovelFaceSvg"></div>
+          <div id="grovelStageLabel" class="grovel-meter-label">STAGE 1: TOTALLY CHILL</div>
+          <p id="grovelSubtext" class="grovel-subtext">"We cooked. We actually read the brief. We're good."</p>
+        </div>
+
+        <input type="range" id="grovelSlider" class="custom-range-slider" min="0" max="100" value="0"
+          aria-label="Groveling Slider from Confident to Please God No">
+
+        <div class="slider-scale-labels">
+          <span>😎 CHILL (0%)</span>
+          <span>😅 SWEATING (50%)</span>
+          <span>😭 PLEASE GOD NO (100%)</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       3. Sins of Round 1 — Confession Wall
+       ========================================================================= -->
+  <section class="defense-section" id="sectionConfessions">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">EMBARRASSING INTERVIEW CONFESSIONS</h2>
+        <div style="margin-top: 1rem;">
+          <button id="judgeRandomPickBtn" class="btn-primary">
+            🎲 SPOTLIGHT A RANDOM CONFESSION
+          </button>
+        </div>
+      </div>
+
+      <div class="corkboard-container">
+        <div id="confessionWallGrid" class="confession-wall-grid">
+          <!-- Rendered dynamically by js/confessions.js -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       4. Auto-Apology Generator
+       ========================================================================= -->
+  <section class="defense-section" id="sectionApologyGen">
+    <div class="container" style="max-width: 860px;">
+      <div class="section-header">
+        <h2 class="section-title">RAPID-FIRE APOLOGY GENERATOR</h2>
+        <p class="section-desc">Press the button whenever a judge asks an uncomfortable technical question.</p>
+      </div>
+
+      <div class="telegram-card">
+        <div class="tape-strip"></div>
+        <div class="paperclip"></div>
+
+        <div class="telegram-header-bar">
+          <span>INSTANT EXCUSE DISPATCHER</span>
+          <span id="apologyCountBadge" class="rubber-stamp" style="font-size: 1.1rem; padding: 0.1rem 0.5rem;">1 EXCUSE
+            FILED</span>
+        </div>
+
+        <div class="apology-box">
+          <p id="apologyQuote" class="apology-quote">"Judges, it was working literally 90 seconds before you walked
+            over..."</p>
+          <span id="apologyCategory" class="apology-subtext">The Classic Hackathon Curse</span>
+        </div>
+
+        <div class="apology-actions">
+          <button id="generateApologyBtn" class="btn-primary">
+            <span>⚡ GENERATE NEW APOLOGY</span>
+          </button>
+          <button id="copyApologyBtn" class="btn-secondary">
+            <span>📋 COPY EXCUSE</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       5 & 7. Roast Our Rivals & Rival Team Trial
+       ========================================================================= -->
+  <section class="defense-section" id="sectionCourtroom">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">PUT OUR RIVALS ON TRIAL INSTEAD</h2>
+        <p class="section-desc">Why eliminate our team when there are clear crimes against computer science sitting next
+          to us?</p>
+      </div>
+
+      <div class="grid-2">
+        <!-- 5. Roast Our Rivals -->
+        <div class="paper-card roast-card">
+          <div class="folder-tab">RIVAL DOSSIER</div>
+          <div class="tape-strip"></div>
+
+          <div class="rival-selector-row">
+            <label for="rivalSelect">SELECT RIVAL TEAM:</label>
+            <select id="rivalSelect" class="rival-select">
+              <option value="0">Team 404: Brain Not Found</option>
+              <option value="1">Team Overthinkers: Redux Specialists</option>
+              <option value="2">The "AI Prompt Bro" Squad</option>
+            </select>
+          </div>
+
+          <div class="roast-dossier-body">
+            <div class="coffee-ring" style="bottom: 5px; right: 5px; width: 70px; height: 70px;"></div>
+            <h3 id="roastTargetName" class="roast-target-name">TARGET: Team 404</h3>
+            <p id="roastBurnText" class="roast-burn-text">
+              "They spent the entire hackathon debating whether dark mode looks more 'senior developer' while their
+              submit button doesn't even have an onClick handler."
+            </p>
+            <div class="burn-meter-row">
+              <span>DAMAGE RATING:</span>
+              <div class="burn-meter-track">
+                <div class="burn-meter-fill"></div>
+              </div>
+              <span style="color: var(--stamp-red); font-weight: 700;">96% CRITICAL</span>
+            </div>
+          </div>
+          <p class="typewriter" style="font-size: 0.85rem; color: var(--ink-faded); text-align: center;">
+            * All roasts are 100% good-natured. Please don't fight us in the parking lot.
+          </p>
+        </div>
+
+        <!-- 7. Rival Team Trial -->
+        <div class="paper-card courtroom-docket" id="courtroomCard">
+          <div class="folder-tab" style="background: #ba1e1e; color: #fff;">CASE #2026-CRIM-99</div>
+
+          <div class="indictment-box">
+            <div class="indictment-row">
+              <span class="label">DEFENDANT ON TRIAL:</span>
+              <strong id="trialDefendant" style="font-size: 1.25rem;">Team 404: Brain Not Found</strong>
+            </div>
+            <div class="indictment-row">
+              <span class="label">THE CHARGE:</span>
+              <span id="trialCharge" style="color: #222;">Spending 50 Minutes on Canva Logo Design Instead of Writing
+                Code</span>
+            </div>
+            <div class="indictment-row">
+              <span class="label">EVIDENCE:</span>
+              <span id="trialEvidence" style="color: var(--ink-faded); font-size: 0.95rem;">1 commit from 45 minutes ago
+                containing a broken README.</span>
+            </div>
+            <div class="indictment-row">
+              <span class="label">RECOMMENDED SENTENCE:</span>
+              <span id="trialSentence" style="color: var(--stamp-red); font-weight: 700;">Sentenced to write frontend in
+                raw Notepad.</span>
+            </div>
+          </div>
+
+          <div class="gavel-btn-wrapper">
+            <button id="strikeGavelBtn" class="gavel-strike-btn">
+              <span>🔨 SLAM GAVEL & CONVICT</span>
+            </button>
+          </div>
+
+          <!-- Stamped "GUILTY" Overlay -->
+          <div id="guiltyStampOverlay" class="guilty-stamp-overlay">
+            GUILTY
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       6 & 8. "Judges, Please" Chatbot & Emergency Bribe Vault
+       ========================================================================= -->
+  <section class="defense-section" id="sectionChatAndBribe">
+    <div class="container">
+      <div class="grid-2">
+
+        <!-- 6. "Judges, Please" Chatbot -->
+        <div class="paper-card" style="padding: 1.5rem;">
+          <div class="folder-tab">DESPERATE BOT</div>
+
+          <div class="transcript-window">
+            <div id="chatHistory" class="chat-history">
+              <!-- Populated by js/chatbot.js -->
+            </div>
+
+            <div class="chat-suggestion-chips">
+              <button class="chip-btn">Are you guys getting eliminated?</button>
+              <button class="chip-btn">Why didn't you write tests?</button>
+              <button class="chip-btn">Convince me in 5 words.</button>
+              <button class="chip-btn">What if we just say no?</button>
+            </div>
+
+            <div class="chat-input-bar">
+              <input type="text" id="chatInput" class="chat-input" placeholder="Ask us anything, Judge..."
+                autocomplete="off">
+              <button id="chatSendBtn" class="chat-send-btn">BEG</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 8. Emergency Bribe Vault -->
+        <div class="paper-card vault-container">
+          <div class="folder-tab">CONTRABAND VAULT</div>
+
+          <div style="margin-bottom: 0.5rem;">
+            <span id="vaultStatusText" class="rubber-stamp" style="font-size: 1.2rem; padding: 0.15rem 0.6rem;">VAULT
+              LOCKED</span>
+          </div>
+
+          <p class="typewriter" style="font-size: 0.95rem; color: var(--ink-faded); margin: 0.75rem 0;">
+            Click the safe to inspect our strictly non-monetary, highly absurd bribe package.
+          </p>
+
+          <div id="vaultSafeDoor" class="vault-safe-door" title="Click to crack the vault">
+            <div id="vaultDial" class="vault-dial">
+              <span>SAFE</span>
+            </div>
+          </div>
+
+          <button id="unlockVaultBtn" class="btn-primary" style="margin-top: 0.5rem;">
+            🔓 CRACK THE BRIBE VAULT
+          </button>
+
+          <div id="vaultBribeReveal" class="vault-bribe-reveal">
+            <h3 class="bribe-title">🎁 THE ABSURD JUDGE BRIBE BUNDLE</h3>
+            <div class="bribe-description" style="text-align: left; margin-top: 0.75rem;">
+              <p>• <strong>Half a packet of Oreos</strong> (untouched, preserved with love).</p>
+              <p>• <strong>7x rare hackathon stickers</strong> you missed from the registration desk.</p>
+              <p>• <strong>GitHub Blood Oath</strong>: We will star every single one of your personal repositories.</p>
+              <p>• <strong>Free Code Review Pass</strong>: We will never complain about your PR comments.</p>
+              <p>• <strong>Handwritten Letter</strong>: A personalized thank-you card written by our team lead's mom.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       MODALS: Judge Spotlight & Emergency Lockdown
+       ========================================================================= -->
+
+  <!-- 3. Judge Confession Spotlight Modal -->
+  <div id="judgeSpotlightModal" class="judge-spotlight-modal" role="dialog" aria-modal="true">
+    <div class="spotlight-card">
+      <div class="spotlight-badge">📢 READ ALOUD TO THE ROOM</div>
+      <h3 id="spotlightAuthor" class="typewriter"
+        style="font-size: 1.35rem; margin-bottom: 1rem; color: #222; font-weight: 700;">Confession</h3>
+      <p id="spotlightSinText" class="typewriter"
+        style="font-size: 1.45rem; font-style: italic; line-height: 1.5; font-weight: 700; margin-bottom: 1.5rem; color: #111;">
+        "Sin text"
+      </p>
+      <div id="spotlightVerdict" class="rubber-stamp" style="margin-bottom: 1.5rem;">
+        VERDICT: GUILTY
+      </div>
+      <br>
+      <button id="closeSpotlightBtn" class="btn-primary">
+        DISMISS CHARGES (CLOSE)
+      </button>
+    </div>
+  </div>
+
+  <!-- 9. Emergency Lockdown Overlay Modal -->
+  <div id="lockdownOverlay" class="lockdown-overlay" role="dialog" aria-modal="true">
+    <div class="lockdown-content">
+      <h2 class="lockdown-title">🚨 ELIMINATION CANCELLED! 🚨</h2>
+      <span class="rubber-stamp" style="margin-bottom: 1rem;">IMMUNITY GRANTED</span>
+      <p class="lockdown-body">
+        <strong>EXECUTIVE CLEMENCY IN EFFECT!</strong><br>
+        By pressing this button, the judges have officially agreed that our team brings too much energy to be sent home.
+        You are now contractually required to vote us into the Top 50. Please collect your honorary stickers at our
+        table.
+      </p>
+      <button id="dismissLockdownBtn" class="btn-primary" style="font-size: 1.4rem; padding: 1rem 2.5rem;">
+        DISMISS & SPARE OUR LIVES
+      </button>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       FOOTER
+       ========================================================================= -->
+  <footer>
+    <div class="container">
+      <p class="typewriter">
+        <strong>SURVIVAL.EXE</strong> • Built by a desperate team in 60 minutes with zero sleep and pure grit.
+      </p>
+    </div>
+  </footer>
+
+  <!-- Main ES6 Coordinator -->
+  <script type="module" src="js/main.js"></script>
+</body>
+
+</html>
